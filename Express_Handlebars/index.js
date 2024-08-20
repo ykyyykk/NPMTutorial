@@ -8,7 +8,7 @@ const fortuneArray = ["a", "b", "c", "d", "e"];
 app.engine(
   "handlebars",
   expressHandlebars({
-    defaultLayout: "main",
+    defaultLayout: "mainWithImg",
   })
 );
 
@@ -33,6 +33,10 @@ app.get("/about", (request, response) => {
     fortuneArray[Math.floor(Math.random() * fortuneArray.length)];
   response.render("about", { fortune: randomFortune });
 });
+
+// 取消顯示DevTool Network localhost headers ResponseHeaders x-powered-by
+// 應該可以用來取消顯示其他東西
+app.disable("x-powered-by");
 
 //custom 404 page
 app.use((request, response) => {

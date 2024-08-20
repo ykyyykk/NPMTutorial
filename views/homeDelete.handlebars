@@ -1,0 +1,11 @@
+<h1>Delete</h1>
+
+<button id="delete_btn">Delete this shit</button>
+<script>
+  document.getElementById("delete_btn").addEventListener("click" , ()=>{
+  fetch("/item",{ method: "DELETE" })
+  {{! 不知道在衝三小 }}
+  .then(response => response.text())
+  {{! 將IndexDelete 的response.send的字串送到這邊 }}
+  .then(data => alert(data)) .catch(error => console.error("Error:",error)); });
+</script>

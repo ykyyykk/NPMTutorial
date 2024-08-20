@@ -15,7 +15,7 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (request, response) => {
-  response.render("home", { title: "HomeTitle" });
+  response.render("homeForm", { title: "HomePostTitle" });
 });
 
 // 按下home 的 submit按鈕 去到/submit頁面 拿的是result.handlebars的檔案
