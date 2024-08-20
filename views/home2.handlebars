@@ -1,0 +1,20 @@
+<h1>Welcome to Meadowlark Travel XXX</h1>
+
+<h2>form submission example</h2>
+{{! /submit 回傳網址 }}
+<form action="/submit" method="post">
+  <label for="name">Name:</label>
+  {{! required 使input為空按下submit時 出現popup}}
+  <input type="text" name="InputNameName" required />
+  <button type="submit">Submit</button>
+</form>
+
+<h1>Delete Item Example</h1>
+
+<button id="delete_btn">Delete this shit</button>
+
+<script>
+  document.getElementById("delete_btn").addEventListener("click",()=>{
+  fetch("/item",{ method: "DELETE" }) .then(response => response.text())
+  .then(data => alert(data)) .catch(error => console.error("Error:",error)); });
+</script>
